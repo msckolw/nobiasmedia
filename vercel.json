@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "ls -la && cd frontend && pwd && npm install && npm run build",
-  "outputDirectory": "frontend/build",
-  "routes": [
+  "builds": [
     {
-      "src": "/(.*)",
-      "dest": "frontend/build/$1"
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     }
   ]
 } 
